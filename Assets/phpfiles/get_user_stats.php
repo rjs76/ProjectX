@@ -1,6 +1,6 @@
 <?php
 // connect to the database
-$db = mysqli_connect('sql.njit.edu', 'username', 'password', 'tableName');
+$db = mysqli_connect('sql.njit.edu', 'mw288', '1k9L0X2z', 'mw288');
 $username = $_POST['username'];
 $data = array();
 
