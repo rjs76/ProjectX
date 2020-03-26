@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: a894b87805752384fa7c9a39713a4cdf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5443451030280309223
+    second: Chris_Idle_0
+  - first:
+      213: 5408747380632790166
+    second: Chris_Idle_1
+  - first:
+      213: -8693822975649969194
+    second: Chris_Idle_2
+  - first:
+      213: 1883915645629766294
+    second: Chris_Idle_3
+  - first:
+      213: 5151760213706901997
+    second: Chris_Idle_4
+  - first:
+      213: 586021728161978257
+    second: Chris_Idle_5
+  - first:
+      213: 8523920377719388333
+    second: Chris_Idle_6
+  - first:
+      213: 6703824913977922153
+    second: Chris_Idle_7
+  - first:
+      213: 7540667684828773007
+    second: Chris_Idle_8
+  - first:
+      213: 6867560655090790037
+    second: Chris_Idle_9
+  - first:
+      213: -6244034090851130203
+    second: Chris_Idle_10
+  - first:
+      213: -6606538495918743589
+    second: Chris_Idle_11
+  - first:
+      213: 3052572315816163735
+    second: Chris_Idle_12
+  - first:
+      213: -7584711305310278863
+    second: Chris_Idle_13
+  - first:
+      213: 1623775331537742318
+    second: Chris_Idle_14
+  - first:
+      213: -3240926065949900623
+    second: Chris_Idle_15
+  - first:
+      213: -3726232297982301842
+    second: Chris_Idle_16
+  - first:
+      213: 4100721825470625649
+    second: Chris_Idle_17
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chris_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ffa2617fd8c0a45b72554e17e97ea7
+      internalID: 5443451030280309223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fb08284d4b5d44d8c0e3e346a1dd2a
+      internalID: 5408747380632790166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbfdeb077a57174486f09a7a003c7f6
+      internalID: -8693822975649969194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dea8cb96504ff45a8e8218994fe139
+      internalID: 1883915645629766294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba6d93a0a1fdf14087c068b4a954d01
+      internalID: 5151760213706901997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4736598da53f042b4a144a66f94844
+      internalID: 586021728161978257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fecf8d9f31a6704cbfbb940d8068fa6
+      internalID: 8523920377719388333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f30889b6c6958e4e9c1e0f3b45dd2b3
+      internalID: 6703824913977922153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc132a664aaec3468f819e63edd74a2
+      internalID: 7540667684828773007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118cea0f3148db1498d33d469042a0da
+      internalID: 6867560655090790037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd525b87847858f4e9ee20b98d7c89da
+      internalID: -6244034090851130203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9debfdf2d60f8e644a130a0526feeb53
+      internalID: -6606538495918743589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33dd0c89a413e204da8b67e88d4e0944
+      internalID: 3052572315816163735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8a29556b6111c4fa8e1b584783d0f6
+      internalID: -7584711305310278863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4b767d83f6f4847a6735d39702f5f6
+      internalID: 1623775331537742318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 130
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9768145b6d1d8fc47b1ac5b9fbc80be6
+      internalID: -3240926065949900623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 12
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e4363fcf8e3fb459445829fde85bff
+      internalID: -3726232297982301842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chris_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 12
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834759b6c4ffb24499b16e77bfa2cbc4
+      internalID: 4100721825470625649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
