@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Grid : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Grid : MonoBehaviour
     public string grid_name;
 
     [SerializeField]
-    public AnimationClip grid_sprite;
+    public Sprite grid_sprite;
 
     [SerializeField]
     public Sprite grid_icon;
