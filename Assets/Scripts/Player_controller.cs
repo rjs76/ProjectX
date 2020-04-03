@@ -8,16 +8,19 @@ public class Player_controller : MonoBehaviour
 	private Animator anim;
 	private Rigidbody2D myRigidBody;
 	private BoxCollider2D boxCollider2d;
-	private bool isAttacking,isBlocking,isDucking,jumpTrigger,isGrounded;
+	private bool isAttacking,isBlocking,isDucking,jumpTrigger,isGrounded,fLeft,fRight;
+	public GameObject target;
 	float xDir;
 	float horizontal;
-	
+	int flip;
     // Start is called before the first frame update
     void Start()
     {
-		anim = GetComponent<Animator>();
+		anim = transform.GetComponent<Animator>();
         myRigidBody=transform.GetComponent<Rigidbody2D>();
 		boxCollider2d=transform.GetComponent<BoxCollider2D>();
+		//target = GameObject.Find("Player2");
+		fRight=true;
     }
 
     // Update is called once per frame
@@ -138,9 +141,30 @@ public class Player_controller : MonoBehaviour
 		}
 		if(GroundCheck()&&anim.GetBool("isJumping")==true){
 			anim.SetBool("isJumping",false);
+			anim.ResetTrigger("punch");
+			anim.ResetTrigger("kick");
 		}
 		
-		
+		if (transform.position.x > target.transform.position.x) {
+			if(fLeft==false){
+				fLeft=true;
+				fRight=false;
+			flip=-1;
+			Vector3 temp=transform.localScale;
+			temp.x*=flip;
+			transform.localScale=temp;
+		}
+		}
+		else {
+			if(fRight==false){
+				fRight=true;
+				fLeft=false;
+			flip=-1;
+			Vector3 temp=transform.localScale;
+			temp.x*=flip;
+			transform.localScale=temp;
+			}
+		}
        Debug.Log(myRigidBody.velocity);
     }
 	
