@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_controller : MonoBehaviour
+public class Player2_controller : MonoBehaviour
 {
 	[SerializeField] private LayerMask platformLayerMask;
-	public static Player_controller player1;
+	public static Player_controller player2;
 	private Animator anim;
 	private Rigidbody2D myRigidBody;
 	private BoxCollider2D boxCollider2d;
@@ -30,7 +30,7 @@ public class Player_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-			horizontal = Input.GetAxis("P1Horizontal");
+			horizontal = Input.GetAxis("P2Horizontal");
 			if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Standing_Kick")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Crouch_Kick")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Standing_Punch")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Crouch_Punch")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump_Punch")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump_Kick")){
 				anim.SetBool("isAttacking",false);
 				
@@ -41,7 +41,7 @@ public class Player_controller : MonoBehaviour
 			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Idle")){
 				isDucking=false;
 			}
-		if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D)){
+		if(Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.RightArrow)){
 			if(isAttacking==false){
 			anim.SetBool("isRunning",true);
 			}
@@ -49,7 +49,7 @@ public class Player_controller : MonoBehaviour
 		else{
 			anim.SetBool("isRunning",false);
 		}
-		if(Input.GetKey(KeyCode.S)){
+		if(Input.GetKey(KeyCode.DownArrow)){
 			if(isGrounded==true){
 			myRigidBody.velocity = Vector2.zero;
 			anim.SetTrigger("duck");
@@ -60,7 +60,7 @@ public class Player_controller : MonoBehaviour
 		else{
 			anim.SetBool("isDucking",false);
 		}
-		if(Input.GetKey(KeyCode.G)){
+		if(Input.GetKey(KeyCode.J)){
 			if(isAttacking==false){
 			if(anim.GetBool("isJumping") == true){
 				if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump_Punch")){
@@ -87,7 +87,7 @@ public class Player_controller : MonoBehaviour
 			}
 			}
 		}
-		if(Input.GetKey(KeyCode.H)){
+		if(Input.GetKey(KeyCode.K)){
 			if(isAttacking==false){
 			if(anim.GetBool("isJumping") == true){
 				if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump_Kick")){
@@ -115,7 +115,7 @@ public class Player_controller : MonoBehaviour
 		}
 		}
 		
-		if(Input.GetKey(KeyCode.B)){
+		if(Input.GetKey(KeyCode.M)){
 			if(isGrounded==true){
 			if(anim.GetBool("isDucking") == true){
 				if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Crouch_Block")){
@@ -141,7 +141,7 @@ public class Player_controller : MonoBehaviour
 			isBlocking=false;
 		}
 		
-		if(Input.GetKey(KeyCode.W)){
+		if(Input.GetKey(KeyCode.UpArrow)){
 			if(isAttacking==false&&isBlocking==false&&isDucking==false){
 				anim.SetTrigger("jump");
 				anim.SetBool("isJumping",true);
@@ -155,7 +155,6 @@ public class Player_controller : MonoBehaviour
 				anim.ResetTrigger("kick");
 		}
 		}
-		
 		if (transform.position.x > target.transform.position.x) {
 			if(fLeft==false){
 				fLeft=true;
@@ -177,7 +176,6 @@ public class Player_controller : MonoBehaviour
 			}
 		}
 		
-		 
 	 
     }
 	
@@ -188,7 +186,6 @@ public class Player_controller : MonoBehaviour
 	
 	private void Movement(float horizontal)
 	{
-
 		if(knockbackTime<=0){
 		if(isAttacking == false&&isBlocking==false&&isDucking==false){
 			myRigidBody.velocity= new Vector2(horizontal*20,myRigidBody.velocity.y);
@@ -202,7 +199,7 @@ public class Player_controller : MonoBehaviour
 	
 	private void Jump(){
 		float jumpVelocity=100f;
-		if(Input.GetKey(KeyCode.W)){
+		if(Input.GetKey(KeyCode.UpArrow)){
 			if(GroundCheck()&&isAttacking == false&&isBlocking==false&&isDucking==false){
 				myRigidBody.velocity+=Vector2.up*jumpVelocity;
 			}
@@ -215,8 +212,8 @@ public class Player_controller : MonoBehaviour
 		return raycastHit2d.collider !=null;
 	}
 	
-	void OnTriggerEnter2D(Collider2D other) {
-         if (other.CompareTag("HitboxP2")&&touchingHitbox==false) {
+	 void OnTriggerEnter2D(Collider2D other) {
+         if (other.CompareTag("HitboxP1")&&touchingHitbox==false) {
              touchingHitbox = true;
 			 Debug.Log("Hit");
 			 FindObjectOfType<HitStop>().Stop(0.1f);
@@ -227,13 +224,12 @@ public class Player_controller : MonoBehaviour
 				 knockbackDir=-1;
 			 if(isBlocking==false){
 			 anim.SetTrigger("hit");
-			 anim.SetBool("isHit",true);
+			 anim.SetBool("isHit",true);}
          }
-		 }
      }
      
      void OnTriggerExit2D(Collider2D other) {
-         if (other.CompareTag("HitboxP2")) {
+         if (other.CompareTag("HitboxP1")) {
              touchingHitbox = false;
          }
      }
