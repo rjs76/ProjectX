@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player2
+  - HitboxP1
+  - HitboxP2
   layers:
   - Default
   - TransparentFX
