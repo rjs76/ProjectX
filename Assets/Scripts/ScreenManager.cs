@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class ScreenManager : MonoBehaviour
                 cursors[1].confirmed = false;
                 cursors[1].cursor_highlighter.color = new Color(0, 0, 1);
             }
+
+            if (cursors[2].confirmed) SceneManager.LoadScene("Movement", LoadSceneMode.Single);
         }
     }
 }

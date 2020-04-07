@@ -62,6 +62,7 @@ public class Cursor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J) && !P1.confirmed)
             {
                 P1.confirmed = true;
+                PlayerPrefs.SetString("P1 Character", this.cursor_name.text);
                 P1.cursor_highlighter.color = new Color(0.66f, 0, 0);
             }
         }
@@ -71,7 +72,18 @@ public class Cursor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return) && !P2.confirmed)
             {
                 P2.confirmed = true;
+                PlayerPrefs.SetString("P2 Character", this.cursor_name.text);
                 P2.cursor_highlighter.color = new Color(0, 0, 0.66f);
+            }
+        }
+
+        if (this.tag == "Stage" && this.inuse)
+        {
+            if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Return))
+            {
+                cursor_stage.confirmed = true;
+                PlayerPrefs.SetString("Stage", this.cursor_name.text);
+                cursor_stage.cursor_highlighter.color = new Color(0.557f, 0, 0.557f);
             }
         }
 
