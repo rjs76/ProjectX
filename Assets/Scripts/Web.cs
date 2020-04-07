@@ -14,7 +14,7 @@ public class Web : MonoBehaviour
 	}
 	
 	public void loginUser(string username,string password){
-		string url = "https://web.njit.edu/~rp553/phpfiles/get_user.php";
+		string url = "https://web.njit.edu/~rp553/get_user.php";
 
         WWWForm formDate = new WWWForm ();
         formDate.AddField ("username", username);
