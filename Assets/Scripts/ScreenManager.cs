@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ScreenManager : MonoBehaviour
 {
+    public PlayerPrefs prefs;
     string activeScreen;
     [SerializeField]
     Camera cam;
