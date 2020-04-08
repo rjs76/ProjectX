@@ -5,14 +5,19 @@ using UnityEngine;
 public class Player_controller : MonoBehaviour
 {
 	[SerializeField] private LayerMask platformLayerMask;
-	public static Player_controller player1;
+	public static Player_controller player1;	
+	public Rigidbody2D myRigidBody;
+	//public Game_Controller gameController;
 	private Animator anim;
-	private Rigidbody2D myRigidBody;
 	private BoxCollider2D boxCollider2d;
 	private bool isAttacking,isBlocking,isDucking,jumpTrigger,isGrounded,fLeft,fRight;
 	private bool touchingHitbox=false;
+	public bool defeated;
+	public bool canMove;
 	public GameObject target;
-	float xDir;
+	public float health;
+	public MeterScript healthbar,energybar;
+	public Vector2 startPosition;
 	float horizontal;
 	float knockbackTime;
 	int knockbackDir;
@@ -20,16 +25,43 @@ public class Player_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		player1=this;
 		anim = transform.GetComponent<Animator>();
         myRigidBody=transform.GetComponent<Rigidbody2D>();
 		boxCollider2d=transform.GetComponent<BoxCollider2D>();
 		//target = GameObject.Find("Player2");
 		fRight=true;
+		canMove=true;
+		defeated=false;
+		startPosition=myRigidBody.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+		if(defeated==true||canMove==false)
+		{
+			if(GroundCheck())
+			{
+			if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Victory"))
+			{
+				anim.SetBool("isAttacking",false);
+				anim.SetBool("isRunning",false);
+				anim.SetBool("isDucking",false);
+				anim.SetBool("isBlocking",false);
+				anim.SetBool("isJumping",false);
+				anim.SetTrigger("victory");
+				return;
+			}
+			myRigidBody.velocity = Vector2.zero;
+			return;
+			}		
+		}
+		
+		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Victory")&&Game_Controller.gameController.roundOver==false){
+			anim.SetTrigger("idle");
+		}
+		
 			horizontal = Input.GetAxis("P1Horizontal");
 			if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Standing_Kick")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Crouch_Kick")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Standing_Punch")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Crouch_Punch")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump_Punch")||!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump_Kick")){
 				anim.SetBool("isAttacking",false);
@@ -50,7 +82,7 @@ public class Player_controller : MonoBehaviour
 			anim.SetBool("isRunning",false);
 		}
 		if(Input.GetKey(KeyCode.S)){
-			if(isGrounded==true){
+			if(GroundCheck()){
 			myRigidBody.velocity = Vector2.zero;
 			anim.SetTrigger("duck");
 			anim.SetBool("isDucking",true);
@@ -177,20 +209,30 @@ public class Player_controller : MonoBehaviour
 			}
 		}
 		
+		if(health<=0){
+		 if(defeated==false)
+		 {
+			defeated=true;
+			anim.SetTrigger("knockdown");
+			myRigidBody.velocity= new Vector2(knockbackDir*20,myRigidBody.velocity.y);
+		 }
 		 
+	 } 
 	 
     }
 	
 	void FixedUpdate(){
+		if(defeated==false&&canMove==true){
 		 Movement(horizontal);	
 		 Jump();
+		}
 	}
 	
 	private void Movement(float horizontal)
 	{
 
 		if(knockbackTime<=0){
-		if(isAttacking == false&&isBlocking==false&&isDucking==false){
+		if(isAttacking == false&&isBlocking==false&&isDucking==false&&defeated==false){
 			myRigidBody.velocity= new Vector2(horizontal*20,myRigidBody.velocity.y);
 		}
 		}
@@ -209,6 +251,17 @@ public class Player_controller : MonoBehaviour
 		}
 	}
 	
+	public void Victory(){
+		canMove=false;
+		//play victory animation
+		//stop movement
+		
+	}
+	
+	public void setAnimTrigger(string trigger){
+		anim.SetTrigger(trigger);
+	}
+	
 	private bool GroundCheck(){
 		RaycastHit2D raycastHit2d=Physics2D.BoxCast(boxCollider2d.bounds.center,boxCollider2d.bounds.size,0f,Vector2.down,.1f,platformLayerMask);
 		//Debug.Log(raycastHit2d.collider);
@@ -216,7 +269,7 @@ public class Player_controller : MonoBehaviour
 	}
 	
 	void OnTriggerEnter2D(Collider2D other) {
-         if (other.CompareTag("HitboxP2")&&touchingHitbox==false) {
+         if (other.CompareTag("HitboxP2")&&touchingHitbox==false&&defeated==false) {
              touchingHitbox = true;
 			 Debug.Log("Hit");
 			 FindObjectOfType<HitStop>().Stop(0.1f);
@@ -228,6 +281,8 @@ public class Player_controller : MonoBehaviour
 			 if(isBlocking==false){
 			 anim.SetTrigger("hit");
 			 anim.SetBool("isHit",true);
+			 health-=45;
+			 healthbar.ChangeEnergy(-45);
          }
 		 }
      }
